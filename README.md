@@ -42,7 +42,3 @@ Calculated entirely at the **database level**, covering the requested time perio
   > **Example:** if an IP was enabled 1–2h, then re-enabled 3–4h, a query from 1–4h merges both intervals and returns stats over the combined active window
 
 - If the IP had **no active monitoring** during the requested period, or was active for too short a time to collect at least one measurement — return an **error response**
-
-### Stack Constraints
-
-- No Rails (ActiveSupport and ActiveRecord are permitted)
