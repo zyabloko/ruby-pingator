@@ -1,0 +1,39 @@
+plugins:
+  - rubocop-sequel
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.2
+  SuggestExtensions: false
+  Exclude:
+    - 'Gemfile.lock'
+    - 'config/puma.rb'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+# Grape resources and RSpec describe blocks are naturally long
+Metrics/BlockLength:
+  Exclude:
+    - 'api/**/*.rb'
+    - 'spec/**/*.rb'
+
+# Stats service is intentionally complex — refactor separately
+Metrics/MethodLength:
+  Exclude:
+    - 'services/ips_service/stats.rb'
+
+Metrics/AbcSize:
+  Exclude:
+    - 'services/ips_service/stats.rb'
+
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - 'services/ips_service/stats.rb'
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - 'services/ips_service/stats.rb'
